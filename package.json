@@ -1,0 +1,25 @@
+{
+  "name": "binance-server",
+  "version": "1.0.0",
+  "description": "Wulfey's binance-api project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wulfey/binance-server.git"
+  },
+  "keywords": [
+    "Binance",
+    "API",
+    "cryptocurrency",
+    "markets"
+  ],
+  "author": "Jason Wolfe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wulfey/binance-server/issues"
+  },
+  "homepage": "https://github.com/wulfey/binance-server#readme"
+}
