@@ -1,0 +1,64 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "engines": {
+    "node": "8.4.0",
+    "npm": "5.4.2"
+  },
+  "private": true,
+  "proxy": {
+    "/auth/google": {
+      "target": "http://localhost:5000"
+    },
+    "/graphql": {
+      "target": "http://localhost:5000"
+    },
+    "/api/*": {
+      "target": "http://localhost:5000"
+    }
+  },
+  "dependencies": {
+    "apollo-client": "^1.9.2",
+    "axios": "^0.16.2",
+    "graphql-tag": "^2.4.2",
+    "install": "^0.10.1",
+    "load-script": "^1.0.0",
+    "lodash": "^4.17.4",
+    "lowdb": "^1.0.0",
+    "materialize-css": "^0.100.2",
+    "node-bittrex-api": "^0.7.6",
+    "npm": "^5.4.1",
+    "prop-types": "^15.6.0",
+    "react": "^15.6.1",
+    "react-apollo": "^1.4.15",
+    "react-coin-hive": "^1.1.0",
+    "react-dom": "^15.6.1",
+    "react-google-maps": "^7.3.0",
+    "react-html-parser": "^2.0.0",
+    "react-idle": "^2.0.0",
+    "react-materialize": "^1.0.14",
+    "react-pivot": "^3.0.0",
+    "react-raw-html": "^0.4.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.13",
+    "react-sparklines": "^1.7.0",
+    "react-stripe-checkout": "^2.6.3",
+    "react-timer-mixin": "^0.13.3",
+    "redux": "^3.7.2",
+    "redux-form": "^7.0.4",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.2.0",
+    "request": "^2.82.0",
+    "request-promise": "^4.2.1",
+    "sendgrid": "^5.2.3",
+    "simple-load-script": "^1.0.2",
+    "youtube-api-search": "0.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
