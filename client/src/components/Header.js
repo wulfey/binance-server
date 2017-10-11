@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 // import StripePayments from './StripePayments';
 // import * as actions from "../actions";
+// import { majors, altsBTC, altsETH } from './marketData/ValidConstants';
+// import MarketDropDowns from './marketData/MarketDropDowns';
 
 class Header extends Component {
   // constructor(props) {
@@ -28,13 +30,10 @@ class Header extends Component {
         );
       default:
         return [
-          // <li key="1">
-          //   <StripePayments />
-          // </li>,
-          <li style={{ margin: '0px 10px' }} key="2">
+          <li style={{ margin: '0px 10px' }} key="4">
             Credits: {this.props.auth.credits}
           </li>,
-          <li key="3">
+          <li key="5">
             <a href="/api/logout">Logout</a>
           </li>
         ];

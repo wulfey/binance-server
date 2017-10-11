@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { queryAllMarkets } from '../actions/index';
+import { queryAllMarkets } from '../../actions/index';
 
 class AllMarketDisplay extends Component {
   constructor(props) {
@@ -102,8 +102,8 @@ class AllMarketDisplay extends Component {
   }
 }
 
-function mapStateToProps({ auth, allMarkets }) {
-  return { auth, allMarkets };
+function mapStateToProps({ auth, queryResults }) {
+  return { auth, queryResults };
 }
 
 export default connect(mapStateToProps, { queryAllMarkets })(AllMarketDisplay);

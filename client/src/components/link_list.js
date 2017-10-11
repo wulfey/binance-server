@@ -2,6 +2,37 @@ import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
 
+/*
+LinkList outline 
+
+Home
+  /landing
+
+Market Data
+  Get allMarkets
+    /allMarkets   [default]
+  Get specificMarket
+    /specificMarket
+      /link to placeOrder
+      /link to check Orders/Positions on market
+
+Trading
+  Place new order
+    /placeOrder
+      /orderForm
+      // place both MARKET and LIMIT
+  View orders
+    /viewOrders
+  View positions
+    /viewPositions    [default]
+    
+My Account
+
+Manage Orders
+
+
+*/
+
 class LinkList extends Component {
   constructor(props) {
     super(props);
@@ -13,21 +44,27 @@ class LinkList extends Component {
 
   renderSubTab() {
     switch (this.state.selection) {
-      // case 'BasicApps':
-      //   return (
-      //     <div className="left" style={{ marginBottom: '5%' }}>
-      //       {this.renderSubAppButton('Books App')}
-      //       {this.renderSubAppButton('TicTac App')}
-      //       {this.renderSubAppButton('Todo App')}
-      //     </div>
-      //   );
-      // case 'GraphQLApps':
-      //   return (
-      //     <div className="left" style={{ marginBottom: '5%' }}>
-      //       {this.renderSubAppButton('Posts App')}
-      //       {this.renderSubAppButton('Lyrical App')}
-      //     </div>
-      //   );
+      case 'Get Market Data':
+        return (
+          <div className="left" style={{ marginBottom: '5%' }}>
+            {this.renderSubAppButton('Get allMarkets')}
+            {this.renderSubAppButton('Get specificMarket')}
+          </div>
+        );
+      case 'Place Orders':
+        return (
+          <div className="left" style={{ marginBottom: '5%' }}>
+            {this.renderSubAppButton('Limit Orders')}
+            {this.renderSubAppButton('Market Orders')}
+          </div>
+        );
+      case 'My Orders':
+        return (
+          <div className="left" style={{ marginBottom: '5%' }}>
+            {this.renderSubAppButton('Open Orders')}
+            {this.renderSubAppButton('My Positions')}
+          </div>
+        );
       // case 'SearchApps':
       //   return (
       //     <div className="left" style={{ marginBottom: '5%' }}>
@@ -66,10 +103,10 @@ class LinkList extends Component {
 
   getRoute(name) {
     switch (name) {
-      // case 'HiveMiner App':
-      //   return '/hiveapp';
-      // case 'Survey App':
-      //   return '/surveys';
+      case 'Get allMarkets':
+        return '/marketData/AllMarketDisplay';
+      case 'Get specificMarket':
+        return '/marketData/SpecificMarket';
       default:
         return '/';
     }
@@ -110,7 +147,7 @@ class LinkList extends Component {
   }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
 
     return (
       // over tab
@@ -129,12 +166,11 @@ class LinkList extends Component {
           >
             Home Page
           </Link>
-          {/* {this.renderButton('BasicApps')}
-          {this.renderButton('SearchApps')}
-          {this.renderButton('GraphQLApps')}
-          {this.renderButton('CryptoApps')}
-          {this.renderButton('MailerApps')} */}
-          {this.renderSubTab()}
+          {this.renderButton('Get Market Data')}
+          {this.renderButton('Place Orders')}
+          {this.renderButton('My Orders')}
+
+          <div style={{ marginBottom: '10%' }}>{this.renderSubTab()}</div>
         </div>
       </div>
       // sub tab

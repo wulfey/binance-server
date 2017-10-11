@@ -10,6 +10,10 @@ import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import * as actions from '../actions/index';
 
+//import react components
+import AllMarketDisplay from './marketData/AllMarketDisplay';
+import SpecificMarket from './marketData/SpecificMarket';
+
 const networkInterface = createNetworkInterface({
   uri: '/graphql',
   opts: {
@@ -43,6 +47,14 @@ class App extends Component {
               <Header />
               <LinkList />
               <Switch>
+                <Route
+                  path="/marketData/AllMarketDisplay"
+                  component={AllMarketDisplay}
+                />
+                <Route
+                  path="/marketData/SpecificMarket"
+                  component={SpecificMarket}
+                />
                 <Route path="/" component={Landing} />
               </Switch>
             </div>
